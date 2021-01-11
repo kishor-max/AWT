@@ -1,0 +1,176 @@
+1.WAP to illustrate implementation of functions in javascript.
+
+function function1(x,y)
+{
+    return x+y;
+}
+console.log(function1(23,34));
+
+==================================================================================================
+2.WAP to illustrate the declaration of object, assignment of value and display it.
+
+var Sport={
+    sportName : "basketball",
+    college : "SGGSIE & T",
+    Tallowance : 1000,
+    Dallowance : 200,
+    details : function()
+    {
+        console.log(this.sportName + " "+ this.college+" "+this.Tallowance+" "+" "+this.Dallowance);
+    //return this.sportName + " "+ this.collegeName+" "+this.Tallowance+" "+" "+this.Dallowance;
+    }
+};
+Sport.sportName;
+ Sport.college;
+ Sport.Dallowance;
+ Sport.Tallowance;
+ Sport.details();
+
+==================================================================================================
+3.WAP to illustrate declaration of array , assignment of value to an array and display it.
+
+var que3 = ["red","yellow","blue","green"];
+        console.log(que3);
+que3.push("white");
+       console.log(que3);
+que3.pop();
+       console.log(que3);
+
+//associative array
+que3["black"]="Black";
+
+console.log("conventional for loop");
+for(var r=0;r<=que3.length;r++)
+{
+console.log(que3[r]);
+}
+
+
+console.log("for loop");
+for(var x in que3)
+{
+    console.log(que3[x]);
+}
+//console.log("for loop "+que3.length);
+
+==================================================================================================
+4.Write a javascript function named is_integer which checks if the passed argument is an integer.
+You can use any mathematical operator or functions defined in the Math object.
+
+function is_integer(num)
+{
+    if(isNaN(num))
+    {
+        return false;
+    }
+    else
+    {
+        return true;
+    }
+}
+
+console.log(is_integer(3.2));
+
+==================================================================================================
+5.Using the forEach function defined for an array, find the sum of the array of numbers. [ function
+add_all(arr) {...} ]
+
+function sumArray(num)
+{
+    var sum = 0;
+    for(var i in num)
+    {
+        sum += num[i];
+    }
+    return(sum);
+}
+var num = [2,5,8];
+console.log(sumArray(num));
+
+==================================================================================================
+6.Write a JavaScript program to convert temperatures to and from celsius, fahrenheit. [ Use the
+formula : c/5 = (f-32)/9, where c = temperature in celsius and f = temperature in fahrenheit]
+var fahren = 100;
+
+function que6(celcisus)
+{
+    var celcisus = (fahren - 32 ) * 5/9; 
+    return celcisus;
+}
+
+console.log(que6(fahren));
+
+==================================================================================================
+7.Write a factorial function that returns the factorial of a given number, n. Make sure you return the
+calculated value and not just print it. [ function factorial(n){...} ]
+
+function fact(num)
+{
+    var f = 1;
+    for(var i = 1 ; i <= num ; i++ )
+    {
+        f *= i; // f = f * i;
+    }
+    return f;
+}
+
+console.log(fact(4));
+
+==================================================================================================
+8.Write a javascript function that converts a given amount of money into coins of denominations (1,
+2, 5, 10 and 25). [ function convert_to_coins(amount) {...} ]. You may choose to print the coin
+denominations used on the console. E.g. convert_to_coins(87) should print 25 25 25 10 2.
+
+ 1 2 5 10 25
+87 = 25*3 + 10*1 + 2*1
+*/
+function BreakMoney(money)
+{
+    function printMoney(a,notes)
+    {
+        for(var i = 0;i<a;i++)
+            console.log(notes);
+    }
+
+    if(money >= 25)
+    {
+        var a = parseInt(money/25);
+        console.log("money divided by 25 is: "+ a);
+        printMoney(a,"25");
+        money = parseInt(money%25);
+        console.log("25 last : "+money)
+    }
+    if(money >= 10)
+    {
+        var a = parseInt(money/10);
+        console.log("money divided by 10 is: "+ a);
+        printMoney(a,"10");
+        money = parseInt(money%10);
+        console.log("10 last : "+money)
+    }
+    if(money >= 5)
+    {
+        var a = parseInt(money/5);
+        console.log("money divided by 5 is: "+ a);
+        printMoney(a,"5");
+        money = parseInt(money%5);
+        console.log("5 last : "+money)
+    }
+    if(money >= 2)
+    {
+        var a = parseInt(money/2);
+        console.log("money divided by 2 is: "+ a);
+        printMoney(a,"2");
+        money = parseInt(money%2);
+        console.log("2 last : "+money)
+    }
+    if(money >= 1)
+    {
+        var a = parseInt(money/1);
+        console.log("money divided by 1 is: "+ a);
+        printMoney(a,"1");
+        console.log("1 last : "+money)
+    }
+}
+
+BreakMoney(87);
